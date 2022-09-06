@@ -18,7 +18,7 @@ const { SQL_TABLE_GROUP1 } = require('./constants.js')
 //
 // Debug Settings
 //
-const debugLog = debugSettings()
+const debugLog = debugSettings(true)
 const debugFunStartSetting = false
 const debugFunEndSetting = false
 const debugModule = 'OptionsGroup1'

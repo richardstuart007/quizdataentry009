@@ -15,6 +15,7 @@ const g_log1 = debugSettings()
 //
 const apiAxios = async (method, url, data) => {
   try {
+    if (g_log1) console.log(`url(${url}) method(${method})`)
     const response = await axios({
       method: method,
       url: url,
@@ -23,8 +24,9 @@ const apiAxios = async (method, url, data) => {
     //
     //  Errors
     //
-    if (response.statusText !== 'OK')
-      throw Error('Did not receive expected data')
+    if (g_log1) console.log(response)
+    if (g_log1) console.log('return data rows ', response.data.length)
+    if (response.status !== 200) throw Error('Did not receive expected data')
     //
     //  Return rows
     //

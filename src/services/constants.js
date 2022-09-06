@@ -9,7 +9,8 @@ exports.SQL_TABLE_GROUP3 = 'group3'
 exports.SQL_TABLE_REFLINKS = 'reflinks'
 exports.VALIDATE_ON_CHANGE = false
 //
-//  Railway - Server Data
+//  Server
 //
+exports.SERVER = 'RAILWAY'
 exports.URL_BASE = 'https://quizserver009-production.up.railway.app'
 exports.URL_TABLES = '/QuizTables'

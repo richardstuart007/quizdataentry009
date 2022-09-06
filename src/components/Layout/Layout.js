@@ -57,6 +57,10 @@ const useStyles = makeStyles(theme => {
   }
 })
 //
+//  Server
+//
+const { SERVER } = require('../../services/constants.js')
+//
 // Debug Settings
 //
 const g_log1 = debugSettings()
@@ -93,6 +97,10 @@ export default function Layout({ children }) {
       title = CurrentPage
       break
   }
+  //
+  //  Add server
+  //
+  title = title + ` (Server:${SERVER})`
   //...................................................................................
   //.  Render the component
   //...................................................................................

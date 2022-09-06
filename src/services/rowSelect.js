@@ -40,7 +40,8 @@ async function rowSelect(props) {
       const body = {
         sqlClient: sqlClient,
         sqlString: sqlString,
-        sqlAction: 'SELECTSQL'
+        sqlAction: 'SELECTSQL',
+        sqlTable: sqlTable
       }
       //
       //  URL

@@ -51,6 +51,7 @@ async function getTable(props) {
           })
         : (body = {
             sqlClient: sqlClient,
+            sqlTable: sqlTable,
             sqlAction: sqlAction,
             sqlString: sqlString
           })

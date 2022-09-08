@@ -10,7 +10,6 @@ import debugSettings from '../debug/debugSettings'
 // Constants
 //
 const sqlClient = 'rowUpsert'
-const { URL_BASE } = require('./constants.js')
 const { URL_TABLES } = require('./constants.js')
 //
 // Debug Settings
@@ -34,7 +33,7 @@ async function rowUpsert(props) {
         sqlKeyName: sqlKeyName,
         sqlRow: sqlRow
       }
-      const URL = URL_BASE + URL_TABLES
+      const URL = sqlURL + URL_TABLES
       if (g_log1) console.log('URL ', URL)
       //
       //  SQL database
@@ -65,7 +64,7 @@ async function rowUpsert(props) {
   //
   //  Deconstruct
   //
-  const { sqlTable, sqlKeyName, sqlRow } = props
+  const { sqlURL, sqlTable, sqlKeyName, sqlRow } = props
   if (g_log1) console.log('props: ', props)
   //
   // Database Update

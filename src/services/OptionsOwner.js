@@ -19,13 +19,13 @@ const { SQL_TABLE_OWNER } = require('./constants.js')
 // Debug Settings
 //
 const debugLog = debugSettings()
-const debugFunStartSetting = false
-const debugFunEndSetting = false
+const debugFunStartSetting = true
+const debugFunEndSetting = true
 const debugModule = 'OptionsOwner'
 let debugStack = []
 
 //===================================================================================
-const OptionsOwner = () => {
+const OptionsOwner = props => {
   //.............................................................................
   //.  Debug Logging
   //.............................................................................
@@ -71,12 +71,7 @@ const OptionsOwner = () => {
     //
     //  Options
     //
-    let Options = [
-      {
-        id: 'None',
-        title: 'None'
-      }
-    ]
+    let Options = []
     data.forEach(item => {
       const itemObj = {
         id: item.oowner,
@@ -101,8 +96,10 @@ const OptionsOwner = () => {
     //  Process promise
     //
     const props = {
+      sqlURL: sqlURL,
       sqlTable: SQL_TABLE_OWNER
     }
+
     var myPromiseGet = MyQueryPromise(rowSelect(props))
     //
     //  Resolve Status
@@ -134,6 +131,11 @@ const OptionsOwner = () => {
   //...................................................................................
   debugStack = []
   debugFunStart(debugModule)
+  //
+  //  Deconstruct props
+  //
+  const { sqlURL } = props
+  debugLogging('sqlURL ', sqlURL)
   //
   //  SQL server
   //

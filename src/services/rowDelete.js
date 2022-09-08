@@ -10,7 +10,6 @@ import debugSettings from '../debug/debugSettings'
 // Constants
 //
 const sqlClient = 'rowDelete'
-const { URL_BASE } = require('./constants.js')
 const { URL_TABLES } = require('./constants.js')
 //
 // Debug Settings
@@ -33,7 +32,7 @@ async function rowDelete(props) {
         sqlAction: 'DELETE',
         sqlWhere: sqlWhere
       }
-      const URL = URL_BASE + URL_TABLES
+      const URL = sqlURL + URL_TABLES
       if (g_log1) console.log('URL ', URL)
       //
       //  SQL database
@@ -64,7 +63,7 @@ async function rowDelete(props) {
   //
   //  Deconstruct
   //
-  const { sqlTable, sqlWhere } = props
+  const { sqlURL, sqlTable, sqlWhere } = props
   if (g_log1) console.log('props: ', props)
   //
   // Database Update

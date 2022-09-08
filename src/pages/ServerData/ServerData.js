@@ -22,6 +22,7 @@ import useMyTable from '../../components/controls/useMyTable'
 //
 //  Utilities
 //
+import { useSnapshot } from 'valtio'
 import { ValtioStore } from '../ValtioStore'
 //
 //  Services
@@ -149,6 +150,7 @@ const ServerData = () => {
     //
     const getTableparams = {
       sqlCaller: functionName,
+      sqlURL: URL_BASE,
       sqlTable: 'owner',
       sqlAction: 'SELECT',
       sqlWhere: '',
@@ -233,6 +235,7 @@ const ServerData = () => {
     //
     const getTableparams = {
       sqlCaller: functionName,
+      sqlURL: URL_BASE,
       sqlTable: 'questions',
       sqlAction: 'SELECT',
       sqlWhere: '',
@@ -317,6 +320,7 @@ const ServerData = () => {
     //
     const getTableparams = {
       sqlCaller: functionName,
+      sqlURL: URL_BASE,
       sqlTable: 'bidding',
       sqlAction: 'SELECT',
       sqlWhere: '',
@@ -402,6 +406,7 @@ const ServerData = () => {
     //
     const getTableparams = {
       sqlCaller: functionName,
+      sqlURL: URL_BASE,
       sqlTable: 'hands',
       sqlAction: 'SELECT',
       sqlWhere: '',
@@ -488,6 +493,7 @@ const ServerData = () => {
     //
     const getTableparams = {
       sqlCaller: functionName,
+      sqlURL: URL_BASE,
       sqlTable: 'reflinks',
       sqlAction: 'SELECT',
       sqlWhere: '',
@@ -655,6 +661,7 @@ const ServerData = () => {
     //
     const getTableparams = {
       sqlCaller: functionName,
+      sqlURL: URL_BASE,
       sqlTable: 'group2',
       sqlAction: 'SELECT',
       sqlWhere: '',
@@ -737,6 +744,7 @@ const ServerData = () => {
     //
     const getTableparams = {
       sqlCaller: functionName,
+      sqlURL: URL_BASE,
       sqlTable: 'group3',
       sqlAction: 'SELECT',
       sqlWhere: '',
@@ -898,6 +906,11 @@ const ServerData = () => {
   //...................................................................................
   debugStack = []
   debugFunStart(debugModule)
+  //
+  //  Define the ValtioStore
+  //
+  const snapShot = useSnapshot(ValtioStore)
+  const URL_BASE = snapShot.v_URL
 
   useEffect(() => {
     LoadOptions()

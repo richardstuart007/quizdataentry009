@@ -25,7 +25,7 @@ const debugModule = 'OptionsGroup3'
 let debugStack = []
 
 //===================================================================================
-const OptionsGroup3 = () => {
+const OptionsGroup3 = props => {
   //.............................................................................
   //.  Debug Logging
   //.............................................................................
@@ -102,6 +102,7 @@ const OptionsGroup3 = () => {
     //  Process promise
     //
     const props = {
+      sqlURL: sqlURL,
       sqlTable: SQL_TABLE_GROUP3
     }
     var myPromiseGet = MyQueryPromise(rowSelect(props))
@@ -135,6 +136,11 @@ const OptionsGroup3 = () => {
   //...................................................................................
   debugStack = []
   debugFunStart(debugModule)
+  //
+  //  Deconstruct props
+  //
+  const { sqlURL } = props
+  debugLogging('sqlURL ', sqlURL)
   //
   //  SQL server
   //

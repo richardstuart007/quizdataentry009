@@ -10,7 +10,6 @@ import debugSettings from '../debug/debugSettings'
 // Constants
 //
 const functionName = 'getTable'
-const { URL_BASE } = require('./constants.js')
 const { URL_TABLES } = require('./constants.js')
 //..............................................................................
 //.  Initialisation
@@ -56,7 +55,7 @@ async function getTable(props) {
             sqlString: sqlString
           })
 
-      const URL = URL_BASE + URL_TABLES
+      const URL = sqlURL + URL_TABLES
       if (g_log1) console.log('URL ', URL)
       //
       //  SQL database
@@ -89,6 +88,7 @@ async function getTable(props) {
   //
   const {
     sqlCaller,
+    sqlURL,
     sqlTable,
     sqlAction = 'SELECT',
     sqlWhere = '',
@@ -96,6 +96,7 @@ async function getTable(props) {
     sqlString = ''
   } = props
   if (g_log1) console.log('sqlCaller ', sqlCaller)
+  if (g_log1) console.log('sqlURL ', sqlURL)
   if (g_log1) console.log('sqlTable ', sqlTable)
   if (g_log1) console.log('sqlAction ', sqlAction)
   if (g_log1) console.log('sqlWhere ', sqlWhere)

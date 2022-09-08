@@ -25,7 +25,7 @@ const debugModule = 'OptionsRefLinks'
 let debugStack = []
 
 //===================================================================================
-const OptionsRefLinks = () => {
+const OptionsRefLinks = props => {
   //.............................................................................
   //.  Debug Logging
   //.............................................................................
@@ -101,6 +101,7 @@ const OptionsRefLinks = () => {
     //  Process promise
     //
     const props = {
+      sqlURL: sqlURL,
       sqlTable: SQL_TABLE_REFLINKS
     }
     var myPromiseGet = MyQueryPromise(rowSelect(props))
@@ -134,6 +135,11 @@ const OptionsRefLinks = () => {
   //...................................................................................
   debugStack = []
   debugFunStart(debugModule)
+  //
+  //  Deconstruct props
+  //
+  const { sqlURL } = props
+  debugLogging('sqlURL ', sqlURL)
   //
   //  SQL server
   //

@@ -57,10 +57,6 @@ const useStyles = makeStyles(theme => {
   }
 })
 //
-//  Server
-//
-const { SERVER } = require('../../services/constants.js')
-//
 // Debug Settings
 //
 const g_log1 = debugSettings()
@@ -100,7 +96,8 @@ export default function Layout({ children }) {
   //
   //  Add server
   //
-  title = title + ` (Server:${SERVER})`
+  const server = snapShot.v_Server
+  title = title + ` (Server:${server})`
   //...................................................................................
   //.  Render the component
   //...................................................................................

@@ -10,7 +10,6 @@ import debugSettings from '../debug/debugSettings'
 // Constants
 //
 const sqlClient = 'rowSelect'
-const { URL_BASE } = require('./constants.js')
 const { URL_TABLES } = require('./constants.js')
 //
 // Debug Settings
@@ -46,7 +45,7 @@ async function rowSelect(props) {
       //
       //  URL
       //
-      const URL = URL_BASE + URL_TABLES
+      const URL = sqlURL + URL_TABLES
       if (g_log1) console.log('URL ', URL)
       //
       //  SQL database
@@ -73,7 +72,7 @@ async function rowSelect(props) {
   //  Deconstruct props
   //
   if (g_log1) console.log('props: ', props)
-  const { sqlTable, sqlOrderBy, sqlWhere, sqlRows } = props
+  const { sqlURL, sqlTable, sqlOrderBy, sqlWhere, sqlRows } = props
   //
   // Database Update
   //

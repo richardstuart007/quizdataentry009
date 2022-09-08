@@ -18,14 +18,14 @@ const { SQL_TABLE_GROUP1 } = require('./constants.js')
 //
 // Debug Settings
 //
-const debugLog = debugSettings(true)
+const debugLog = debugSettings()
 const debugFunStartSetting = false
 const debugFunEndSetting = false
 const debugModule = 'OptionsGroup1'
 let debugStack = []
 
 //===================================================================================
-const OptionsGroup1 = () => {
+const OptionsGroup1 = props => {
   //.............................................................................
   //.  Debug Logging
   //.............................................................................
@@ -71,13 +71,7 @@ const OptionsGroup1 = () => {
     //
     //  Options
     //
-    let Options = [
-      {
-        id: 'None',
-        title: 'None'
-      }
-    ]
-
+    let Options = []
     data.forEach(item => {
       const itemObj = {
         id: item.g1id,
@@ -102,6 +96,7 @@ const OptionsGroup1 = () => {
     //  Process promise
     //
     const props = {
+      sqlURL: sqlURL,
       sqlTable: SQL_TABLE_GROUP1
     }
     var myPromiseGet = MyQueryPromise(rowSelect(props))
@@ -135,6 +130,11 @@ const OptionsGroup1 = () => {
   //...................................................................................
   debugStack = []
   debugFunStart(debugModule)
+  //
+  //  Deconstruct props
+  //
+  const { sqlURL } = props
+  debugLogging('sqlURL ', sqlURL)
   //
   //  SQL server
   //

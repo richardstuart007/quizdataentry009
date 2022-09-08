@@ -3,6 +3,11 @@
 //
 import { useEffect } from 'react'
 import { Grid } from '@mui/material'
+import { useSnapshot } from 'valtio'
+//
+//  Utilities
+//
+import { ValtioStore } from '../ValtioStore'
 //
 //  Debug Settings
 //
@@ -381,6 +386,7 @@ export default function HandEntry(props) {
     //  Process promise
     //
     const props = {
+      sqlURL: URL_BASE,
       sqlTable: SQL_TABLE_HANDS,
       sqlWhere: ` where hid = ${hid}`
     }
@@ -429,6 +435,7 @@ export default function HandEntry(props) {
     //  Build Props
     //
     const props = {
+      sqlURL: URL_BASE,
       sqlTable: SQL_TABLE_HANDS,
       sqlKeyName: ['hid'],
       sqlRow: dbValues
@@ -481,6 +488,7 @@ export default function HandEntry(props) {
     //  Populate Props
     //
     const props = {
+      sqlURL: URL_BASE,
       sqlTable: SQL_TABLE_HANDS,
       sqlWhere: `hid = ${hid}`
     }
@@ -880,6 +888,11 @@ export default function HandEntry(props) {
   //...................................................................................
   debugStack = []
   debugFunStart(debugModule)
+  //
+  //  Define the ValtioStore
+  //
+  const snapShot = useSnapshot(ValtioStore)
+  const URL_BASE = snapShot.v_URL
   //
   //  Deconstruct props
   //

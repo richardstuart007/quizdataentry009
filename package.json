@@ -18,7 +18,9 @@
     "valtio": "^1.6.1"
   },
   "scripts": {
-    "start": "set PORT=5008 && react-scripts start",
+    "start": "set PORT=9002 && react-scripts start",
+    "startrailway": "set PORT=9002 && react-scripts start",
+    "startlocal": "set PORT=8002 && react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"

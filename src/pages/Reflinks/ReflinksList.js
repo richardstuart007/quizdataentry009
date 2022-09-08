@@ -19,6 +19,11 @@ import EditOutlinedIcon from '@mui/icons-material/EditOutlined'
 import CloseIcon from '@mui/icons-material/Close'
 import RefreshIcon from '@mui/icons-material/Refresh'
 import FilterListIcon from '@mui/icons-material/FilterList'
+import { useSnapshot } from 'valtio'
+//
+//  Utilities
+//
+import { ValtioStore } from '../ValtioStore'
 //
 //  Pages
 //
@@ -151,6 +156,7 @@ export default function ReflinksList() {
     //
     const sqlRows = `FETCH FIRST ${SQL_ROWS} ROWS ONLY`
     const props = {
+      sqlURL: URL_BASE,
       sqlTable: SQL_TABLE_REFLINKS,
       sqlOrderBy: ' order by rid',
       sqlRows: sqlRows
@@ -190,6 +196,7 @@ export default function ReflinksList() {
     //  Populate Props
     //
     const props = {
+      sqlURL: URL_BASE,
       sqlTable: SQL_TABLE_REFLINKS,
       sqlWhere: `rref = '${rref}'`
     }
@@ -233,6 +240,7 @@ export default function ReflinksList() {
     //  Build Props
     //
     const props = {
+      sqlURL: URL_BASE,
       sqlTable: SQL_TABLE_REFLINKS,
       sqlKeyName: ['rref'],
       sqlRow: rowData
@@ -294,6 +302,7 @@ export default function ReflinksList() {
     //  Populate Props
     //
     const props = {
+      sqlURL: URL_BASE,
       sqlTable: SQL_TABLE_REFLINKS,
       sqlWhere: `rref = '${data.rref}'`,
       sqlRow: data,
@@ -479,6 +488,11 @@ export default function ReflinksList() {
   //...................................................................................
   debugStack = []
   debugFunStart(debugModule)
+  //
+  //  Define the ValtioStore
+  //
+  const snapShot = useSnapshot(ValtioStore)
+  const URL_BASE = snapShot.v_URL
   //
   //  Initial Data Load
   //

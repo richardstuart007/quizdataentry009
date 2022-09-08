@@ -19,6 +19,11 @@ import EditOutlinedIcon from '@mui/icons-material/EditOutlined'
 import CloseIcon from '@mui/icons-material/Close'
 import RefreshIcon from '@mui/icons-material/Refresh'
 import FilterListIcon from '@mui/icons-material/FilterList'
+import { useSnapshot } from 'valtio'
+//
+//  Utilities
+//
+import { ValtioStore } from '../ValtioStore'
 //
 //  Pages
 //
@@ -143,6 +148,7 @@ export default function OwnerList() {
     //
     const sqlRows = `FETCH FIRST ${SQL_ROWS} ROWS ONLY`
     const props = {
+      sqlURL: URL_BASE,
       sqlTable: SQL_TABLE_OWNER,
       sqlOrderBy: ' order by oowner',
       sqlRows: sqlRows
@@ -182,6 +188,7 @@ export default function OwnerList() {
     //  Populate Props
     //
     const props = {
+      sqlURL: URL_BASE,
       sqlTable: SQL_TABLE_OWNER,
       sqlWhere: `oowner = '${oowner}'`
     }
@@ -225,6 +232,7 @@ export default function OwnerList() {
     //  Build Props
     //
     const props = {
+      sqlURL: URL_BASE,
       sqlTable: SQL_TABLE_OWNER,
       sqlKeyName: ['oowner'],
       sqlRow: rowData
@@ -286,6 +294,7 @@ export default function OwnerList() {
     //  Populate Props
     //
     const props = {
+      sqlURL: URL_BASE,
       sqlTable: SQL_TABLE_OWNER,
       sqlWhere: `oowner = '${data.oowner}'`,
       sqlRow: data
@@ -450,6 +459,11 @@ export default function OwnerList() {
   //...................................................................................
   debugStack = []
   debugFunStart(debugModule)
+  //
+  //  Define the ValtioStore
+  //
+  const snapShot = useSnapshot(ValtioStore)
+  const URL_BASE = snapShot.v_URL
   //
   //  Initial Data Load
   //

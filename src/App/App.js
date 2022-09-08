@@ -16,6 +16,10 @@ import Control from '../pages/Control'
 //
 import Layout from '../components/Layout/Layout'
 //
+//  Utilities
+//
+import { ValtioStore } from '../pages/ValtioStore'
+//
 //  Global Themes used by the Theme Provider
 //
 const theme = createTheme({
@@ -45,8 +49,29 @@ const theme = createTheme({
     }
   }
 })
-
+//
+//  Server
+//
+const { SERVER_REMOTE } = require('../services/constants.js')
+const { URL_REMOTE } = require('../services/constants.js')
+const { SERVER_LOCAL } = require('../services/constants.js')
+const { URL_LOCAL } = require('../services/constants.js')
 export default function App() {
+  //
+  //  Update Valtio store with URL and Server Name
+  //
+  const port = window.location.port
+  console.log(port)
+  if (port === 9002) {
+    ValtioStore.v_Server = SERVER_REMOTE
+    ValtioStore.v_URL = URL_REMOTE
+    console.log(`${port} ${SERVER_REMOTE}`)
+  } else {
+    ValtioStore.v_Server = SERVER_LOCAL
+    ValtioStore.v_URL = URL_LOCAL
+    console.log(`${port} ${SERVER_LOCAL}`)
+  }
+  //
   return (
     <StyledEngineProvider injectFirst>
       <ThemeProvider theme={theme}>

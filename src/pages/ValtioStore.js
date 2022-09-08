@@ -2,6 +2,11 @@ import { proxy } from 'valtio'
 
 const ValtioStore = proxy({
   //
+  //  Server
+  //
+  v_URL: '',
+  v_Server: '',
+  //
   //  State
   //
   v_Page: 'QuestionList',

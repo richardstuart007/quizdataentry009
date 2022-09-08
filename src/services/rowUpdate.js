@@ -10,7 +10,6 @@ import debugSettings from '../debug/debugSettings'
 // Constants
 //
 const sqlClient = 'rowUpdate'
-const { URL_BASE } = require('./constants.js')
 const { URL_TABLES } = require('./constants.js')
 //
 // Debug Settings
@@ -42,7 +41,7 @@ async function rowUpdate(props) {
         sqlWhere: sqlWhere,
         sqlRow: rowData
       }
-      const URL = URL_BASE + URL_TABLES
+      const URL = sqlURL + URL_TABLES
       if (g_log1) console.log('URL ', URL)
       //
       //  SQL database
@@ -73,7 +72,7 @@ async function rowUpdate(props) {
   //
   //  Deconstruct
   //
-  const { sqlTable, sqlWhere, sqlRow, sqlID } = props
+  const { sqlURL, sqlTable, sqlWhere, sqlRow, sqlID } = props
   if (g_log1) console.log('props: ', props)
   //
   // Database Update

@@ -19,6 +19,11 @@ import EditOutlinedIcon from '@mui/icons-material/EditOutlined'
 import CloseIcon from '@mui/icons-material/Close'
 import RefreshIcon from '@mui/icons-material/Refresh'
 import FilterListIcon from '@mui/icons-material/FilterList'
+import { useSnapshot } from 'valtio'
+//
+//  Utilities
+//
+import { ValtioStore } from '../ValtioStore'
 //
 //  Pages
 //
@@ -143,6 +148,7 @@ export default function Group2List() {
     //
     const sqlRows = `FETCH FIRST ${SQL_ROWS} ROWS ONLY`
     const props = {
+      sqlURL: URL_BASE,
       sqlTable: SQL_TABLE_GROUP2,
       sqlOrderBy: ' order by g2id',
       sqlRows: sqlRows
@@ -182,6 +188,7 @@ export default function Group2List() {
     //  Populate Props
     //
     const props = {
+      sqlURL: URL_BASE,
       sqlTable: SQL_TABLE_GROUP2,
       sqlWhere: `g2id = '${g2id}'`
     }
@@ -225,6 +232,7 @@ export default function Group2List() {
     //  Build Props
     //
     const props = {
+      sqlURL: URL_BASE,
       sqlTable: SQL_TABLE_GROUP2,
       sqlKeyName: ['g2id'],
       sqlRow: rowData
@@ -286,6 +294,7 @@ export default function Group2List() {
     //  Populate Props
     //
     const props = {
+      sqlURL: URL_BASE,
       sqlTable: SQL_TABLE_GROUP2,
       sqlWhere: `g2id = '${data.g2id}'`,
       sqlRow: data
@@ -452,6 +461,11 @@ export default function Group2List() {
   //...................................................................................
   debugStack = []
   debugFunStart(debugModule)
+  //
+  //  Define the ValtioStore
+  //
+  const snapShot = useSnapshot(ValtioStore)
+  const URL_BASE = snapShot.v_URL
   //
   //  Initial Data Load
   //

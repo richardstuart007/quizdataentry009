@@ -6,7 +6,7 @@ exports.URL_REMOTE = 'https://quizserver009-production.up.railway.app'
 //
 //  Server Local (9002)
 //
-exports.SERVER_LOCAL = 'LOCAL'
+exports.SERVER_LOCAL = 'POSTGRESQL'
 exports.URL_LOCAL = 'http://localhost:9001'
 //
 //  Tables

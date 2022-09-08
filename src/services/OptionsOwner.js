@@ -19,8 +19,8 @@ const { SQL_TABLE_OWNER } = require('./constants.js')
 // Debug Settings
 //
 const debugLog = debugSettings()
-const debugFunStartSetting = true
-const debugFunEndSetting = true
+const debugFunStartSetting = false
+const debugFunEndSetting = false
 const debugModule = 'OptionsOwner'
 let debugStack = []
 

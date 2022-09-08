@@ -61,15 +61,18 @@ export default function App() {
   //  Update Valtio store with URL and Server Name
   //
   const port = window.location.port
-  console.log(port)
-  if (port === 9002) {
+  if (port === '9002') {
     ValtioStore.v_Server = SERVER_REMOTE
     ValtioStore.v_URL = URL_REMOTE
-    console.log(`${port} ${SERVER_REMOTE}`)
+    console.log(
+      `DataEntry-PORT(${port}) REMOTE: SERVER(${SERVER_REMOTE}) URL(${URL_REMOTE})`
+    )
   } else {
     ValtioStore.v_Server = SERVER_LOCAL
     ValtioStore.v_URL = URL_LOCAL
-    console.log(`${port} ${SERVER_LOCAL}`)
+    console.log(
+      `DataEntry-PORT(${port}) LOCAL: SERVER(${SERVER_LOCAL}) URL(${URL_LOCAL})`
+    )
   }
   //
   return (

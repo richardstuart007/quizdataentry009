@@ -63,10 +63,15 @@ const { URL_LOCAL } = require('../services/constants.js')
 //----------------------------------------------------------------------------
 export default function App() {
   //
+  //  Update Valtio store with URL and Server Name
+  //
+  let port = '9002'
+  const windowport = window.location.port
+  if (windowport) port = windowport
+  console.log(`port(${port})`)
+  //
   //  Update Valtio store with URL and Server Name - REMOTE
   //
-  const port = window.location.port
-
   if (port === '9002') {
     ValtioStore.v_Server = SERVER_REMOTE
     ValtioStore.v_URL = URL_REMOTE
@@ -75,7 +80,7 @@ export default function App() {
     )
   }
   //
-  //  Update Valtio store with URL and Server Name - LOCAL
+  //  Update Valtio store with URL and Server Name - LOCAL-->REMOTE
   //
   if (port === '9012') {
     ValtioStore.v_Server = SERVER_LOCAL_REMOTE

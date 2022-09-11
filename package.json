@@ -24,7 +24,9 @@
     "startlocal": "set PORT=8002 && react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
@@ -46,5 +48,16 @@
   },
   "main": "index.js",
   "author": "Richard",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "eslint-plugin-react-hooks": "^4.3.0",
+    "gh-pages": "^4.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/richardstuart007/quizserver009.git"
+  },
+  "bugs": {
+    "url": "https://github.com/richardstuart007/quizserver009/issues"
+  }
 }

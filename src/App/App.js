@@ -54,20 +54,40 @@ const theme = createTheme({
 //
 const { SERVER_REMOTE } = require('../services/constants.js')
 const { URL_REMOTE } = require('../services/constants.js')
+const { SERVER_LOCAL_REMOTE } = require('../services/constants.js')
+const { URL_LOCAL_REMOTE } = require('../services/constants.js')
 const { SERVER_LOCAL } = require('../services/constants.js')
 const { URL_LOCAL } = require('../services/constants.js')
+//----------------------------------------------------------------------------
+//- Main Line
+//----------------------------------------------------------------------------
 export default function App() {
   //
-  //  Update Valtio store with URL and Server Name
+  //  Update Valtio store with URL and Server Name - REMOTE
   //
   const port = window.location.port
+
   if (port === '9002') {
     ValtioStore.v_Server = SERVER_REMOTE
     ValtioStore.v_URL = URL_REMOTE
     console.log(
       `DataEntry-PORT(${port}) REMOTE: SERVER(${SERVER_REMOTE}) URL(${URL_REMOTE})`
     )
-  } else {
+  }
+  //
+  //  Update Valtio store with URL and Server Name - LOCAL
+  //
+  if (port === '9012') {
+    ValtioStore.v_Server = SERVER_LOCAL_REMOTE
+    ValtioStore.v_URL = URL_LOCAL_REMOTE
+    console.log(
+      `DataEntry-PORT(${port}) LOCAL: SERVER(${SERVER_LOCAL_REMOTE}) URL(${URL_LOCAL_REMOTE})`
+    )
+  }
+  //
+  //  Update Valtio store with URL and Server Name - LOCAL
+  //
+  if (port === '8002') {
     ValtioStore.v_Server = SERVER_LOCAL
     ValtioStore.v_URL = URL_LOCAL
     console.log(

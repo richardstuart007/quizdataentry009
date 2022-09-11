@@ -1,13 +1,18 @@
 //
-//  Server Remote (9001)
+//  Browser Port (9002) ==> Server REMOTE server
 //
-exports.SERVER_REMOTE = 'RAILWAY'
+exports.SERVER_REMOTE = 'REMOTE'
 exports.URL_REMOTE = 'https://quizserver009-production.up.railway.app'
 //
-//  Server Local (9002)
+//  Browser Port (9012) ==> Server LOCAL Port (9001) ==> Server REMOTE server
 //
-exports.SERVER_LOCAL = 'POSTGRESQL'
-exports.URL_LOCAL = 'http://localhost:9001'
+exports.SERVER_LOCAL_REMOTE = 'LOCAL==>REMOTE'
+exports.URL_LOCAL_REMOTE = 'http://localhost:9001'
+//
+//  Browser Port (8002) ==> Server LOCAL Port (8001)
+//
+exports.SERVER_LOCAL = 'LOCAL'
+exports.URL_LOCAL = 'http://localhost:8001'
 //
 //  Tables
 //

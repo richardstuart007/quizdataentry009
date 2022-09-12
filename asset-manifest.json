@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/static/css/main.61ac7470.css",
-    "main.js": "/static/js/main.7b3f4386.js",
-    "static/media/cards.svg": "/static/media/cards.df180aef78bb238e74cf9539e77eb021.svg",
-    "index.html": "/index.html",
-    "static/media/Ukraine.svg": "/static/media/Ukraine.6c463095630d3ff4d9d39986a2ad630c.svg",
-    "main.61ac7470.css.map": "/static/css/main.61ac7470.css.map",
-    "main.7b3f4386.js.map": "/static/js/main.7b3f4386.js.map"
+    "main.css": "/quizdataentry009/static/css/main.61ac7470.css",
+    "main.js": "/quizdataentry009/static/js/main.5d7e054b.js",
+    "static/media/cards.svg": "/quizdataentry009/static/media/cards.df180aef78bb238e74cf9539e77eb021.svg",
+    "index.html": "/quizdataentry009/index.html",
+    "static/media/Ukraine.svg": "/quizdataentry009/static/media/Ukraine.6c463095630d3ff4d9d39986a2ad630c.svg",
+    "main.61ac7470.css.map": "/quizdataentry009/static/css/main.61ac7470.css.map",
+    "main.5d7e054b.js.map": "/quizdataentry009/static/js/main.5d7e054b.js.map"
   },
   "entrypoints": [
     "static/css/main.61ac7470.css",
-    "static/js/main.7b3f4386.js"
+    "static/js/main.5d7e054b.js"
   ]
 }

@@ -1,6 +1,7 @@
 {
   "name": "quizdataentry009",
   "version": "1.9.0",
+  "homepage": "https://richardstuart007.github.io/quizdataentry009",
   "private": true,
   "dependencies": {
     "@date-io/date-fns": "^2.13.1",
@@ -55,9 +56,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/richardstuart007/quizserver009.git"
+    "url": "git+https://github.com/richardstuart007/quizdataentry009.git"
   },
   "bugs": {
-    "url": "https://github.com/richardstuart007/quizserver009/issues"
+    "url": "https://github.com/richardstuart007/quizdataentry009/issues"
   }
 }
